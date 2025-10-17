@@ -23,8 +23,8 @@ import {
   Instagram,
   Facebook,
   Twitter,
-  Whatsapp,
-  Telegram,
+  Smartphone,
+  Send,
   Grid3X3,
   Sparkles,
   Quote
@@ -134,8 +134,8 @@ const socialPlatforms = [
   { name: 'Instagram', icon: Instagram, size: '1080x1080' },
   { name: 'Facebook', icon: Facebook, size: '1200x630' },
   { name: 'Twitter', icon: Twitter, size: '1200x675' },
-  { name: 'WhatsApp', icon: Whatsapp, size: '1080x1920' },
-  { name: 'Telegram', icon: Telegram, size: '1200x800' }
+  { name: 'WhatsApp', icon: Smartphone, size: '1080x1920' },
+  { name: 'Telegram', icon: Send, size: '1200x800' }
 ]
 
 export default function QuoteSharing() {
