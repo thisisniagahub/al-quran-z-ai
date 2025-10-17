@@ -14,24 +14,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "Al-Quran Digital - AI-Powered Quran Learning App",
+  description: "Advanced Quran learning application with AI tutor, SRS system, advanced search, and comprehensive features for Malaysia & Indonesia. Built with Next.js 15 and modern React stack.",
+  keywords: ["Al-Quran", "Quran", "Islamic", "AI Tutor", "SRS Learning", "Quran Search", "Malaysia", "Indonesia", "Next.js", "TypeScript"],
+  authors: [{ name: "Niaga Hub", url: "https://github.com/thisisniagahub" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Al-Quran Digital - AI-Powered Quran Learning",
+    description: "Advanced Quran learning with AI tutor, SRS system, and comprehensive features for Malaysia & Indonesia",
+    url: "https://al-quran-z-ai.vercel.app",
+    siteName: "Al-Quran Digital",
     type: "website",
+    locale: "ms_MY",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Al-Quran Digital - AI-Powered Quran Learning",
+    description: "Advanced Quran learning with AI tutor, SRS system, and comprehensive features",
+    creator: "@niagahub",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -41,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ms" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

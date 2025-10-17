@@ -1,24 +1,25 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Production optimized settings
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // Temporarily ignore for deployment
   },
-  // 禁用 Next.js 热重载，由 nodemon 处理重编译
-  reactStrictMode: false,
-  webpack: (config, { dev }) => {
-    if (dev) {
-      // 禁用 webpack 的热模块替换
-      config.watchOptions = {
-        ignored: ['**/*'], // 忽略所有文件变化
-      };
-    }
-    return config;
-  },
+  reactStrictMode: true, // Enable for production
   eslint: {
-    // 构建时忽略ESLint错误
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // Ignore ESLint for now
+  },
+  // Optimize for Vercel deployment
+  poweredByHeader: false,
+  compress: true,
+  // Image optimization
+  images: {
+    domains: ['localhost', '127.0.0.1', 'al-quran-z-ai.vercel.app'],
+    formats: ['image/webp', 'image/avif'],
+  },
+  // Environment variables
+  env: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'https://al-quran-z-ai.vercel.app',
   },
 };
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -122,8 +123,6 @@
 }
 
 /* Arabic font styles */
-@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran:wght@400;500;600;700&display=swap');
-
 .font-arabic {
   font-family: 'Amiri Quran', serif;
   line-height: 2.5;
