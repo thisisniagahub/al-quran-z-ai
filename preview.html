@@ -115,7 +115,47 @@
             color: #6b7280;
             margin: 0;
         }
+        .status-info {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px;
+            text-align: center;
+        }
+        .status-info h4 {
+            margin: 0 0 10px 0;
+            color: #92400e;
+        }
+        .status-info p {
+            margin: 5px 0;
+            color: #78350f;
+            font-size: 0.9em;
+        }
     </style>
+    <script>
+        function handleLoadError() {
+            const loading = document.getElementById('loading');
+            loading.innerHTML = `
+                <div style="color: #dc2626;">
+                    <h3>🚀 Deployment in Progress</h3>
+                    <p>The application is currently being deployed.</p>
+                    <p>Please check back in a few minutes.</p>
+                    <button onclick="window.location.reload()" style="margin-top: 15px; padding: 10px 20px; background: #10b981; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                        🔄 Refresh
+                    </button>
+                </div>
+            `;
+        }
+        
+        // Check if iframe loads within 30 seconds
+        setTimeout(() => {
+            const loading = document.getElementById('loading');
+            if (loading.style.display !== 'none') {
+                handleLoadError();
+            }
+        }, 30000);
+    </script>
 </head>
 <body>
     <div class="preview-container">
@@ -127,13 +167,17 @@
         <div class="iframe-container">
             <div class="loading" id="loading">
                 <div class="spinner"></div>
-                <h3>Loading Live Preview...</h3>
+                <h3>Initializing Live Preview...</h3>
                 <p>Sedang memuatkan aplikasi Al-Quran Digital</p>
+                <p style="font-size: 0.9em; margin-top: 10px; color: #9ca3af;">
+                    If the app doesn't load, it may be deploying. Please try refreshing in a few moments.
+                </p>
             </div>
             <iframe 
                 src="https://al-quran-z-ai.vercel.app" 
                 class="preview-iframe"
                 onload="document.getElementById('loading').style.display='none'"
+                onerror="handleLoadError()"
                 frameborder="0">
             </iframe>
         </div>
@@ -145,6 +189,14 @@
             <button class="mobile-btn" onclick="window.open('https://github.com/thisisniagahub/al-quran-z-ai', '_blank')">
                 📂 Lihat Source Code
             </button>
+        </div>
+        
+        <div class="status-info">
+            <h4>📱 Deployment Status</h4>
+            <p><strong>Application:</strong> Al-Quran Digital AI</p>
+            <p><strong>Repository:</strong> <a href="https://github.com/thisisniagahub/al-quran-z-ai" target="_blank" style="color: #059669;">GitHub</a></p>
+            <p><strong>Status:</strong> Deploying to Vercel...</p>
+            <p><strong>Tech Stack:</strong> Next.js 15, TypeScript, Tailwind CSS, Prisma</p>
         </div>
         
         <div class="features">
