@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
   // Optimize for Vercel deployment
   poweredByHeader: false,
   compress: true,
+  // Disable experimental features to reduce memory usage
+  experimental: {
+    optimizePackageImports: [],
+  },
   // Image optimization
   images: {
     remotePatterns: [
@@ -24,6 +28,10 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'https://al-quran-z-ai.vercel.app',
   },
+  // Reduce memory usage
+  swcMinify: true,
+  // Disable static generation for problematic pages
+  trailingSlash: false,
 };
 
 export default nextConfig;
