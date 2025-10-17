@@ -1,7 +1,8 @@
 {
-  "name": "nextjs_tailwind_shadcn_ts",
-  "version": "0.1.0",
+  "name": "al-quran-digital",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://al-quran-z-ai.vercel.app",
   "scripts": {
     "dev": "nodemon --exec \"npx tsx server.ts\" --watch server.ts --watch src --ext ts,tsx,js,jsx 2>&1 | tee dev.log",
     "build": "next build",
